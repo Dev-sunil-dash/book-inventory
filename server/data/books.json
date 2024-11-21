@@ -1,0 +1,43 @@
+[
+    {
+      "bookTitle": "Harry Potter and the Sorcerer’s Stone",
+      "authorName": "J.K. Rowling",
+      "imageURL": "https://images-na.ssl-images-amazon.com/images/I/81YOuOGFCJL.jpg",
+      "category": "Fantasy",
+      "bookDescription": "Harry discovers he’s a wizard and begins his magical journey at Hogwarts School of Witchcraft and Wizardry.",
+      "bookPDFURL": "https://example.com/harrypotter.pdf"
+    },
+    {
+      "bookTitle": "1984",
+      "authorName": "George Orwell",
+      "imageURL": "https://images-na.ssl-images-amazon.com/images/I/71kxa1-0mfL.jpg",
+      "category": "Dystopian",
+      "bookDescription": "A chilling depiction of a totalitarian society under constant surveillance.",
+      "bookPDFURL": "https://example.com/1984.pdf"
+    },
+    {
+      "bookTitle": "The Handmaid's Tale",
+      "authorName": "Margaret Atwood",
+      "imageURL": "https://images-na.ssl-images-amazon.com/images/I/51re4z1AxjL.jpg",
+      "category": "Dystopian",
+      "bookDescription": "A dystopian story of a Handmaid living under a theocratic regime in Gilead.",
+      "bookPDFURL": "https://example.com/handmaids_tale.pdf"
+    },
+    {
+      "bookTitle": "The Little Prince",
+      "authorName": "Antoine de Saint-Exupéry",
+      "imageURL": "https://images-na.ssl-images-amazon.com/images/I/91X5P9QIVRL.jpg",
+      "category": "Children's Literature",
+      "bookDescription": "The story of a young prince’s journey through different planets, exploring universal themes.",
+      "bookPDFURL": "https://example.com/thelittleprince.pdf"
+    },
+    {
+      "bookTitle": "The Count of Monte Cristo",
+      "authorName": "Alexandre Dumas",
+      "imageURL": "https://images-na.ssl-images-amazon.com/images/I/81OMvTio5zL.jpg",
+      "category": "Adventure",
+      "bookDescription": "A tale of betrayal and revenge set during the Napoleonic era.",
+      "bookPDFURL": "https://example.com/count_montecristo.pdf"
+    }
+  ]
+  
