@@ -50,7 +50,6 @@ async function run() {
         //update book: put or patch method
         app.patch('/book/:id', async (req, res) => {
             const id = req.params.id;
-            // console.log(id);
             const updatedBookData = req.body;
             const filter = { _id: new ObjectId(id) };
             const options = { upsert: true };
