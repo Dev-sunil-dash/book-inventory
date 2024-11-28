@@ -1,0 +1,39 @@
+.myBookCards {
+    width: 100%;
+    height: 100%;
+}
+
+.myBookCards .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myBookCards .swiper-slide:hover {
+    transform: scale(1.05);
+}
+
+.myBookCards .swiper-slide img {
+    display: block;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+.myBookCards .swiper-slide:hover img {
+    transform: scale(1.05);
+}
+
+.myBookCards .swiper-slide h3 {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.myBookCards .swiper-slide:hover h3 {
+    color: #1e90ff; /* Change text color on hover */
+}

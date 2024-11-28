@@ -47,6 +47,30 @@ async function run() {
             res.send(allBooks);
         })
 
+        //get book by id
+        app.get('/books/:id', async (req, res) => {
+            const id = req.params.id;
+            console.log('Received ID:', id);
+
+            if (!ObjectId.isValid(id)) {
+                return res.status(400).send('Invalid ID format');
+            }
+            // Fetch the book by ID and return it if found, otherwise return a 404 error
+            try {
+                const book = await bookCollection.findOne({ _id: new ObjectId(id) });
+                if (book) {
+                    res.send(book);
+                    console.log(book);
+                } else {
+                    res.status(404).send('Book not found');
+                    console.log(id);
+                    
+                }
+            } catch (error) {
+                console.error('Error fetching book:', error);
+                res.status(500).send('Internal Server Error');  // Return a 500 error if there was an issue querying the DB
+            }
+        })
         //update book: put or patch method
         app.patch('/book/:id', async (req, res) => {
             const id = req.params.id;

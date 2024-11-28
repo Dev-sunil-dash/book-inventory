@@ -1,0 +1,45 @@
+.mySwiperCard {
+  width: 300px;
+  height: 300px;
+  padding: 50px;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.mySwiperCard .swiper-slide {
+  display: flex;
+  /* Ensures the image is centered */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hover effect for interactive styling */
+.mySwiperCard .swiper-slide:hover {
+  transform: scale(1.05);
+  /* Slight zoom effect on hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  /* Enhanced shadow on hover */
+}
+
+.mySwiperCard .swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+  /* Position the pagination at the bottom of the swiper */
+  width: 100%;
+  text-align: center;
+  /* z-index: 10; Ensure it's above the swiper but below other elements */
+}
+
+.mySwiperCard .slide-image {
+  display: block;
+  object-fit: contain;
+  /* Ensures the full image is contained within the given dimensions */
+  /* Adding a shadow effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* border-radius: 15px; */
+  /* Rounded corners for a softer look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth transitions */
+}
