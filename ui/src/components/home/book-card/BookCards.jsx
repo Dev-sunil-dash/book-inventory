@@ -14,7 +14,7 @@ const BookCards = ({ books, headline }) => {
 
     return (
         <div className="w-full px-4 lg:px-24">
-            <h2 className="text-3xl font-bold text-center text-black my-8">{headline}</h2>
+            <h2 className="text-3xl font-bold text-center text-black mt-8">{headline}</h2>
             <div className='w-full h-auto'>
                 <Swiper
                     slidesPerView={1}
@@ -47,7 +47,7 @@ const BookCards = ({ books, headline }) => {
                                         <img src={book.imageURL} alt={book.bookTitle} />
                                     </div>
                                     <div>
-                                        <h3 className="text-black font-bold text-xl">{book.bookTitle}</h3>
+                                        <h3 className="text-black font-bold text-xl mb-4">{book.bookTitle}</h3>
                                     </div>
                                 </Link>
                             </SwiperSlide>

@@ -12,7 +12,7 @@ const Banner = () => {
                     <h6 className='text-2xl text-blue-700 font-semibold'>Your Book Management Made Simple and Efficient.</h6>
                     <p className='md:w-full'>Welcome to the ultimate solution for book inventory management. Whether you are a bookstore owner, a librarian, or a book enthusiast, our platform simplifies the way you manage your book collection. Say goodbye to cluttered spreadsheets and hello to seamless organization and real-time tracking.</p>
                     <div>
-                        <input type="search" name="search" id="search" placeholder='Search for books' className='py-2 px-2 rounded-s-sm outline-none'></input>
+                        <input type="search" name="search" id="search" placeholder='Search for books' className='py-2 border-none px-2 rounded-s-sm outline-none'></input>
                         <button className='bg-blue-700 text-white font-medium hover:bg-black transition-all ease-in duration-200 px-6 py-2 rounded-s-sm'>Search</button>
                     </div>
 
