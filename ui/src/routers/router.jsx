@@ -14,6 +14,7 @@ import Dashboard from "../components/dashboard/Dashboard";
 import UploadBook from "../components/dashboard/UploadBook";
 import ManageBooks from "../components/dashboard/ManageBooks";
 import EditBook from "../components/dashboard/EditBook";
+import SignUp from "../components/dashboard/SignUp";
 
 const router = createBrowserRouter([
     {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
                 loader: (({ params }) => fetch(`http://localhost:8000/books/${params.id}`))
             },
         ]
+    },
+    {
+        path: "/sign-up",
+        element: <SignUp />,
     }
 ]);
 

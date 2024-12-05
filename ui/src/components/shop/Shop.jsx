@@ -82,33 +82,34 @@ const Shop = () => {
             {/* Right Section for Products */}
             <div className="w-5/6 p-4 mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
                 {filteredBooks.map((book) => (
-                    <div
-                        key={book.id}
-                        className="border rounded-lg p-4 shadow hover:shadow-lg transition"
-                    >
-                        <img
-                            src={book.imageURL}
-                            alt={book.title}
-                            className="w-screen h-48 object-cover mb-4"
-                        />
-                        <h3 className="font-bold text-lg">{book.bookTitle}</h3>
-                        <p className="text-gray-600">{book.authorName}</p>
-                        <p className="text-gray-800 font-semibold">&#8377;{book.price}</p>
-                        <div className="flex justify-around">
-                            <button
-                                className="bg-blue-600 text-white px-4 py-2 rounded mt-4 hover:bg-blue-700 transition"
-                                onClick={() => addToCart(book)}
-                            >
-                                Add to Cart
-                            </button>
-                            <button
-                                className=' bg-red-600 text-white px-4 py-2 rounded mt-4 hover:bg-red-700 transition'
-                                onClick={() => Navigate('/your-path')}
-                            >
-                                Buy Now
-                            </button>
+                    <Link key={book.id} to={`/books/${book._id}`}>
+                        <div
+                            className="border rounded-lg p-4 shadow hover:shadow-lg transition"
+                        >
+                            <img
+                                src={book.imageURL}
+                                alt={book.title}
+                                className="w-screen h-48 object-cover mb-4"
+                            />
+                            <h3 className="font-bold text-lg">{book.bookTitle}</h3>
+                            <p className="text-gray-600">{book.authorName}</p>
+                            <p className="text-gray-800 font-semibold">&#8377;{book.price}</p>
+                            <div className="flex justify-around">
+                                <button
+                                    className="bg-blue-600 text-white px-4 py-2 rounded mt-4 hover:bg-blue-700 transition"
+                                    onClick={() => addToCart(book)}
+                                >
+                                    Add to Cart
+                                </button>
+                                <button
+                                    className=' bg-red-600 text-white px-4 py-2 rounded mt-4 hover:bg-red-700 transition'
+                                    onClick={() => Navigate('/your-path')}
+                                >
+                                    Buy Now
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

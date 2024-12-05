@@ -1,7 +1,7 @@
 import React from 'react'
 import { Sidebar } from "flowbite-react";
 import { BiBuoy } from "react-icons/bi";
-import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards } from "react-icons/hi";
+import { HiArrowSmRight, HiBookmarkAlt, HiBookOpen, HiChartPie, HiInbox, HiLogin, HiLogout, HiOutlineCloudUpload, HiOutlineLightningBolt, HiOutlineLogin, HiOutlineLogout, HiShoppingBag, HiTable, HiUser, HiViewBoards } from "react-icons/hi";
 
 
 const SideBar = () => {
@@ -9,14 +9,17 @@ const SideBar = () => {
         <Sidebar aria-label="Sidebar with content separator example" className='min-h-screen'>
             <Sidebar.Items>
                 <Sidebar.ItemGroup>
-                    <Sidebar.Item href="#" icon={HiChartPie}>
+                    <Sidebar.Logo href="#" img="../../src/assets/profile.png" imgAlt="User Logo">
+                        Flowbite
+                    </Sidebar.Logo>
+                    <Sidebar.Item href="/admin/dashboard" icon={HiChartPie}>
                         Dashboard
                     </Sidebar.Item>
-                    <Sidebar.Item href="#" icon={HiViewBoards}>
-                        Kanban
+                    <Sidebar.Item href="/admin/dashboard/upload-book" icon={HiOutlineCloudUpload}>
+                        Upload Book
                     </Sidebar.Item>
-                    <Sidebar.Item href="#" icon={HiInbox}>
-                        Inbox
+                    <Sidebar.Item href="/admin/dashboard/manage-book" icon={HiBookOpen}>
+                        Manage Books
                     </Sidebar.Item>
                     <Sidebar.Item href="#" icon={HiUser}>
                         Users
@@ -24,11 +27,11 @@ const SideBar = () => {
                     <Sidebar.Item href="#" icon={HiShoppingBag}>
                         Products
                     </Sidebar.Item>
-                    <Sidebar.Item href="#" icon={HiArrowSmRight}>
+                    <Sidebar.Item href="/login" icon={HiOutlineLogin}>
                         Sign In
                     </Sidebar.Item>
-                    <Sidebar.Item href="#" icon={HiTable}>
-                        Sign Up
+                    <Sidebar.Item href="/logout" icon={HiOutlineLogout}>
+                        Log Out
                     </Sidebar.Item>
                 </Sidebar.ItemGroup>
                 <Sidebar.ItemGroup>
