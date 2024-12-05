@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+
 
 //React-icons
-import { FaBarsStaggered, FaBlog, FaSwatchbook, FaXmark } from "react-icons/fa6";
+import { FaBarsStaggered, FaSwatchbook, FaXmark } from "react-icons/fa6";
+import AuthContext from '../../context/AuthContext';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
+
+    const { user, signOutUser } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const hamburgerMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -29,8 +34,20 @@ const Navbar = () => {
         { link: "About", path: "/about" },
         { link: "Shop", path: "/shop" },
         { link: "Sell Book", path: "/admin/dashboard" },
-        { link: "Blog", path: "/blog" }
     ]
+
+    const handleLogout = () => {
+        signOutUser()
+            .then(() => {
+                alert('Successfully logged out!');
+                navigate('/');
+            })
+            .catch((error) => {
+                console.error('Error logging out:', error.message);
+                alert(error.message);
+            });
+    }
+
     return (
         <header className='w-full z-10 bg-transparent fixed top-0 left-0 right-0 transition-all ease-in duration-300'>
             <nav className={`py-4 lg:px-24 px-4  ${isSticky ? "sticky top-0 left-0 right-0 bg-blue-300" : ""}`}>
@@ -55,6 +72,26 @@ const Navbar = () => {
                     {/* btn for large devices */}
                     <div className='space-x-12 hidden lg:flex items-center'>
                         <button><FaBarsStaggered className='w-5 hover:text-blue-700' /></button>
+                        {
+                            user ?
+                                <>
+                                    <span className='text hover:cursor-pointer hover:text-blue-700'>{user.username}</span>
+                                    <button
+                                        onClick={handleLogout}
+                                        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                                    >
+                                        Logout
+                                    </button>
+                                </>
+                                :
+                                <button>
+                                    <Link to='/login'
+                                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                    >
+                                        Login
+                                    </Link>
+                                </button>
+                        }
                     </div>
 
                     {/* menu button for mobile device */}
@@ -75,7 +112,7 @@ const Navbar = () => {
                     }
                 </div>
             </nav>
-        </header>
+        </header >
     )
 }
 
